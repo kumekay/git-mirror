@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -26,7 +28,12 @@ func main() {
 		go func(r repo) {
 			for {
 				log.Printf("updating %s", r.Name)
-				if err := mirror(cfg, r); err != nil {
+				out, err := mirror(cfg, r)
+				scanner := bufio.NewScanner(strings.NewReader(out))
+				for scanner.Scan() {
+					log.Printf("%s: %s", r.Name, scanner.Text())
+				}
+				if err != nil {
 					log.Printf("error updating %s, %s", r.Name, err)
 				} else {
 					log.Printf("updated %s", r.Name)

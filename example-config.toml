@@ -14,20 +14,6 @@ BasePath = "/tmp/mirror"
 [[Repo]]
 Origin = "https://github.com/beefsack/git-mirror.git"
 
-# Repos whose Origin is not a URL is simplified to the last part after any @
-# symbol with any : symbol converted to a /
-#
-# Will be mirrored at http://localhost:8080/github.com/toml-lang-toml.git
-[[Repo]]
-Origin = "git@github.com:toml-lang/toml.git"
-
-# Repos can specify their own Interval to override the global setting.
-#
-# Will be mirrored at http://localhost:8080/github.com/neovim/neovim.git
-[[Repo]]
-Interval = "10m"
-Origin = "https://github.com/neovim/neovim.git"
-
 # It is also possible to set custom names for accessing the repos.
 #
 # Will be mirrored at http://localhost:8080/custom-name
