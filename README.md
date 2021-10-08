@@ -34,6 +34,29 @@ Cloning into 'git-mirror'...
 Checking connectivity... done.
 ```
 
+## Using with docker
+
+You can run it with docker:
+
+```
+docker run --rm -ti -v /your_config/path:/config  kumekay/git-mirror /config/config.toml
+```
+
+Or with docker compose, for example:
+
+```
+services:
+  git-mirror:
+    image: kumekay/git-mirror
+    ports:
+      - "8080:8080"
+    command: ["/etc/git-mirror/config.toml"]
+    volumes:
+      - /opt/git-mirror/data:/git-mirror
+      - /opt/git-mirror/config:/etc/git-mirror
+    restart: always
+```
+
 ## Advanced configuration
 
 See [the example config](example-config.toml) for more advanced configurations.
