@@ -1,10 +1,10 @@
 package main
 
 import (
-	"path/filepath"
 	"fmt"
 	"io/ioutil"
 	"net/url"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -50,7 +50,7 @@ func parseConfig(filename string) (cfg config, repos map[string]repo, err error)
 		cfg.ListenAddr = ":8080"
 	}
 	if cfg.Interval.Duration == 0 {
-		cfg.Interval.Duration = 15 * time.Minute
+		cfg.Interval.Duration = time.Minute
 	}
 	if cfg.BasePath == "" {
 		cfg.BasePath = "."

@@ -1,6 +1,6 @@
 # git-mirror - simple Git mirrors
 
-`git-mirror` is designed to create and serve read-only mirrors of your Git repositories locally or wherever you choose.  A recent GitHub outage reinforces the fact that developers shouldn't be relying on a single remote for hosting code.
+`git-mirror` is designed to create and serve read-only mirrors of your Git repositories locally or wherever you choose. A recent GitHub outage reinforces the fact that developers shouldn't be relying on a single remote for hosting code.
 
 A major design goal of `git-mirror` is that it should just work with as little configuration as possible.
 
@@ -14,7 +14,8 @@ Create `config.toml` similar to:
 [[repo]]
 Origin = "https://github.com/beefsack/git-mirror.git"
 ```
-By default it will update the mirror every **15 minutes** and will serve the mirror over HTTP using port **8080**.  You can specify as many repos as you want by having multiple `[[repo]]` sections.
+
+By default it will update the mirror every **1 minute** and will serve the mirror over HTTP using port **8080**. You can specify as many repos as you want by having multiple `[[repo]]` sections.
 
 Run `git-mirror` with the path to the config file:
 

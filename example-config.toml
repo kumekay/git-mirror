@@ -1,9 +1,9 @@
 # ListenAddr is the address the web server listens on for serving the mirrors.
 # Defaults to :8080
-ListenAddr   = ":8080"
+ListenAddr = ":8080"
 # Interval is the default interval for updating mirrors, can be overridden per
-# repo.  Defaults to 15 minutes.
-Interval     = "15m"
+# repo.  Defaults to 15 seconds.
+Interval = "15m"
 # Base path for storing mirrors, absolute or relative.  Defaults to "."
 BasePath = "/tmp/mirror"
 
@@ -25,12 +25,12 @@ Origin = "git@github.com:toml-lang/toml.git"
 #
 # Will be mirrored at http://localhost:8080/github.com/neovim/neovim.git
 [[Repo]]
-Origin   = "https://github.com/neovim/neovim.git"
 Interval = "10m"
+Origin = "https://github.com/neovim/neovim.git"
 
 # It is also possible to set custom names for accessing the repos.
 #
 # Will be mirrored at http://localhost:8080/custom-name
 [[Repo]]
+Name = "custom-name"
 Origin = "git@github.com:toml-lang/toml.git"
-Name   = "custom-name"
