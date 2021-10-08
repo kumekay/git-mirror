@@ -5,7 +5,7 @@ ListenAddr = ":8080"
 # repo.  Defaults to 15 seconds.
 Interval = "15m"
 # Base path for storing mirrors, absolute or relative.  Defaults to "."
-BasePath = "/tmp/mirror"
+BasePath = "/opt/git-mirror/data"
 
 # An example of a public mirror taking defaults from above.  The Name is
 # generated from the URL by just taking the host and path.
