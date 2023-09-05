@@ -17,7 +17,7 @@ func mirror(cfg config, r repo) (string, error) {
 		out, err := cmd.CombinedOutput()
 		outStr = string(out)
 		if err != nil {
-			return outStr, fmt.Errorf("failed to update remote in %s, %s", repoPath, err)
+			fmt.Fprintf(os.Stderr, "failed to update remote in %s, %s", repoPath, err)
 		}
 	} else if os.IsNotExist(err) {
 		// Clone
@@ -30,7 +30,7 @@ func mirror(cfg config, r repo) (string, error) {
 		out, err := cmd.CombinedOutput()
 		outStr = string(out)
 		if err != nil {
-			return outStr, fmt.Errorf("failed to clone %s, %s", r.Origin, err)
+			fmt.Fprintf(os.Stderr, "failed to clone %s, %s", r.Origin, err)
 		}
 		return string(out), err
 	} else {
